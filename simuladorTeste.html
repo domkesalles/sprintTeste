@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumos</title>
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/362369536735051778/817142352024043560/Z.png"/>
+</head>
+<body>
+    
+<center>
+    <h1>Simulador Financeiro</h1>
+    <br>
+<img src= "https://cdn.discordapp.com/attachments/362369536735051778/817140479400738896/WhatsApp_Image_2021-03-01_at_13.30.33-removebg-preview.png" 
+width="350px" height="350px">
+</center>
+<b style="font-size: 23px; color: goldenrod;"> Informe algumas informações abaixo e mostraremos como nossa solução pode ser útil.</b> 
+<br> 
+<br>
+Insira a média de furtos ou assaltos ocorridos contra os motoristas por mês: <input id="input_roubo">
+<br>
+Insira quantos desses crimes ocorrem na parte da noite ou madrugada: <input id="input_noite">
+<br>
+Insira a média do valor da indenização paga aos motoristas: <input id="input_indenizacao"> 
+<br>
+<button onclick="calculo()">Exibir o resultado</button>
+<br>
+<br>
+<span id="result"></span>
+
+
+</body>
+</html>
+
+<script>
+    function calculo(){
+    var roubo = Number(input_roubo.value);
+    var noite = Number(input_noite.value);
+    var indenizacao = Number(input_indenizacao.value);
+    var valor = roubo * indenizacao;
+    var percentual = (36 * noite) / 100;
+    var solucao = roubo - percentual;
+    var final = solucao * indenizacao;
+
+    result.innerHTML = (`<span style="font-size: 20px;"> O valor médio que sua empresa gasta por mês com indenização é</span> 
+    <b style="color: red; font-size:20px;"> R$ ${valor}</b> 
+    <br>
+    <span style="font-size: 20px;"> Com ajuda de nossa solução, esse valor pode cair para até</span> 
+    <b style="color: red; font-size:20px;"> R$ ${final} </b>
+    <br>
+    <b style="font-size:20px;"> Isso acontece pois é provado que a iluminação pode reduzir os crimes noturnos em até 36%. E nossa solução 
+    ajudará a identificar as ruas que precisam ser iluminadas corretamente.
+    <br>
+    Fonte: https://www1.folha.uol.com.br/cotidiano/2019/07/experimento-mostra-que-ruas-com-iluminacao-publica-tem-menor-riscos-de-serem-pontos-de-crime.shtml
+    </b>`);   
+
+
+
+    }
+    
+</script>
